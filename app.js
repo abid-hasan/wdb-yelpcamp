@@ -17,7 +17,9 @@ var express = require("express"),
   PORT = process.env.PORT || 3000;
 
 // mongoose.connect("mongodb://localhost:27017/yelp_camp", { useNewUrlParser: true, useFindAndModify: false });
-mongoose.connect("mongodb+srv://Potato:1236@abidzdb-byqcr.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true});
+// mongoose.connect("mongodb+srv://Potato:1236@abidzdb-byqcr.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true});
+mongoose.connect(process.env.YELPCAMPDATABASE, { useNewUrlParser: true});
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
