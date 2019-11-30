@@ -16,9 +16,7 @@ var express = require("express"),
   commentRoutes = require("./routes/comments"),
   PORT = process.env.PORT || 3000;
 
-// mongoose.connect("mongodb://localhost:27017/yelp_camp", { useNewUrlParser: true, useFindAndModify: false });
-// mongoose.connect("mongodb+srv://Potato:1236@abidzdb-byqcr.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true});
-mongoose.connect(process.env.YELPCAMPDATABASE, { useNewUrlParser: true});
+mongoose.connect(process.env.YELPCAMPDATABASE, { useNewUrlParser: true });
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
